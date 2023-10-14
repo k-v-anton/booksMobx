@@ -1,0 +1,35 @@
+@use './variables.scss';
+
+@mixin btnPrimary {
+  grid-area: searchBtn;
+  border-radius: .5em;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  border: var(--borderSecondary);
+  color: var(--colorTextPrimary);
+  padding: var(--paddingButtonPrimary);
+  box-shadow: var(--boxShadowStatic);
+  transition:
+    box-shadow var(--transitionMain),
+    border var(--transitionMain),
+    color var(--transitionMain);
+
+  &:hover {
+    box-shadow: var(--boxShadowHover);
+    border: var(--borderSecondary2);
+    color: var(--colorHoverElementPrimary);
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

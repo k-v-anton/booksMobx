@@ -1,0 +1,70 @@
+@use '../../../styles/variables.scss';
+@use '../../../styles/mixins.scss' as mix;
+
+.container {
+  box-shadow: inset 0 0 1em;
+  padding: 1em;
+  width: 100%;
+  min-width: 12em;
+  aspect-ratio: 2/3;
+  display: grid;
+  grid-template-rows: 60% 40%;
+  gap: 1em;
+  text-decoration: none;
+}
+
+.wrapperImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  width: 70%;
+  height: 80%;
+  box-shadow: .5em .5em 2em .05em;
+  object-fit: cover;
+}
+
+.wrapperDescription {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.categories {
+  position: relative;
+  display: inline;
+  color: red;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+
+.bookName {
+  text-transform: lowercase;
+  font-weight: 700;
+  font-size: calc(1em + 5 * (100vw / 1024));
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.authors {
+  display: flex;
+  flex-direction: column;
+
+
+}

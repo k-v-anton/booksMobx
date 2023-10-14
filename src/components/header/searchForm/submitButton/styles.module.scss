@@ -1,0 +1,9 @@
+@use '../../../../styles/mixins.scss' as mix;
+
+.wrapperBtn {
+  @include mix.flexCenter;
+}
+
+.searchBtn[type=submit] {
+  @include mix.btnPrimary;
+}

@@ -1,0 +1,27 @@
+@use '../../styles/variables.scss';
+@use '../../styles/mixins.scss' as mix;
+
+.main {
+  gap: 1em;
+  flex: 1;
+  width: 100%;
+  padding: 1em;
+  overflow-y: auto;
+}
+
+.container {
+  flex-direction: column;
+  @include mix.flexCenter;
+  gap: 1em;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 5em;
+  color: red;
+  @include mix.flexCenter;
+}

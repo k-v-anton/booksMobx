@@ -1,0 +1,6 @@
+.container {
+  display: grid;
+  grid-template-rows: 15em 1fr;
+  height: 100dvh;
+  overflow: hidden;
+}

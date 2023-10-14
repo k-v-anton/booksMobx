@@ -1,0 +1,16 @@
+@use '../../../styles/mixins.scss' as mix;
+@use '../../../styles/variables.scss';
+
+.form {
+  max-width: 42em;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    'search search search searchBtn'
+    'categories categories orderBy orderBy'
+  ;
+  gap: var(--gapPrimary);
+  padding: var(--paddingPrimary);
+}
+

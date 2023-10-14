@@ -1,0 +1,15 @@
+@use '../../../../../styles/variables.scss';
+
+.option {
+  width: 100%;
+  border-radius: .5em;
+  text-align: center;
+  padding: var(--paddingSecondary2);
+  transition: box-shadow var(--transitionMain);
+  box-shadow: var(--boxShadowStatic);
+
+  &:hover {
+    box-shadow: var(--boxShadowHover);
+
+  }
+}

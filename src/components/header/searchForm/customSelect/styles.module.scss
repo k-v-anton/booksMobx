@@ -1,0 +1,86 @@
+@use '../../../../styles/variables.scss';
+@use '../../../../styles/mixins.scss' as mix;
+
+.container {
+  width: 100%;
+  position: relative;
+
+  &:has(.select:focus) {
+    .options {
+      clip-path: var(--clipPathShow);
+    }
+
+    .arrow {
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 0.8em;
+  text-transform: lowercase;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.select[type=text] {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: var(--borderPrimary);
+  color: var(--colorTextPrimary);
+  padding: var(--paddingSecondary);
+}
+
+.options {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 100%);
+  position: absolute;
+  border-top: none;
+  gap: var(--gapSecondary2);
+  clip-path: var(--clipPathHide);
+  color: var(--colorTextSecondary);
+  padding: var(--paddingSecondary);
+  background-color: var(--colorBGSecondary);
+  transition: clip-path var(--transitionMain) var(--transitionDelayPrimary);
+  @include mix.flexColumnCenter;
+}
+
+.arrow {
+  width: 1.5em;
+  aspect-ratio: 1;
+  top: 50%;
+  right: .5em;
+  position: absolute;
+ 
+  &:before,
+  &:after {
+    content: '';
+    top: 50%;
+    width: 60%;
+    height: 0.1em;
+    position: absolute;
+    transition: transform var(--transitionMain);
+    background-color: var(--colorBGSecondary);
+  }
+
+  &::before {
+    left: 0;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    right: 0;
+    transform: rotate(45deg);
+  }
+}

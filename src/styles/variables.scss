@@ -1,0 +1,32 @@
+:root {
+  --colorBGPrimary: #000000;
+  --colorBGSecondary: #ffffff;
+  --colorTextPrimary: #ffffff;
+  --colorTextSecondary: #000000;
+  --colorBorderPrimary: #ffffff;
+  --colorBorderSecondary: #000000;
+  --colorBorderSecondary2: #0bc2da;
+  --colorHoverElementPrimary:#0bc2da;
+  --colorError: #ac1f1f;
+
+  --clipPathShow: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  --clipPathHide: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+  --transitionMain: .25s linear;
+  --transitionDelayPrimary: .1s;
+
+  --borderPrimary: .1em solid var(--colorBorderPrimary);
+  --borderSecondary: .1em solid var(--colorBorderSecondary);
+  --borderSecondary2: .1em solid var(--colorBorderSecondary2);
+
+  --paddingPrimary: 1em;
+  --paddingSecondary: .5em;
+  --paddingSecondary2: .25em;
+  --paddingButtonPrimary: .25em .5em;
+
+  --gapPrimary: 1em;
+  --gapSecondary2: .25em;
+
+  --boxShadowStatic: inset 0 0 .125em .05em #000000;
+  --boxShadowHover: inset 0 0 .5em .1em #0bc2da;
+}
