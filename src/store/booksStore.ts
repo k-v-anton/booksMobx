@@ -2,6 +2,7 @@ import { makeObservable, observable } from 'mobx'
 import { fromPromise } from 'mobx-utils'
 import { addBooks, getBooks } from '../api/getBooks'
 import { BooksType } from '../types/books.Type'
+import { makePersistable } from 'mobx-persist-store';
 
 type ParamsType = {
   string: string
@@ -17,6 +18,22 @@ class BooksStore {
 
   constructor() {
     makeObservable(this, { books: observable, isAddLoading: observable }, { deep: true })
+
+    makePersistable(this, {
+      name: 'books',
+      properties: [
+        {
+          key: 'books',
+          serialize: (value) => {
+            return value
+          },
+          deserialize: (value) => {
+            return value
+          },
+        },
+      ],
+      storage: window.localStorage,
+    });
   }
 
   getBooksAction = () => {

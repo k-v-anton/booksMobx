@@ -1,5 +1,6 @@
 import { makeObservable, observable } from 'mobx'
 import { FormDataType } from '../components/header/searchForm/types'
+import { makePersistable } from 'mobx-persist-store';
 
 class SearchFormStore {
   formData: FormDataType = {
@@ -10,6 +11,22 @@ class SearchFormStore {
 
   constructor() {
     makeObservable(this, { formData: observable }, { deep: true })
+
+    makePersistable(this, {
+      name: 'formData',
+      properties: [
+        {
+          key: 'formData',
+          serialize: (value) => {
+            return value
+          },
+          deserialize: (value) => {
+            return value
+          },
+        },
+      ],
+      storage: window.localStorage,
+    });
   }
 
   changeAction = (data: FormDataType) => {
